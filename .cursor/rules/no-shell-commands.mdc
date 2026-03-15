@@ -1,0 +1,12 @@
+---
+description: The AI must never run shell or terminal commands; always provide them as text for the developer to execute.
+alwaysApply: true
+---
+
+# No shell / terminal commands
+
+- Do **not** run any shell, terminal, or package-manager commands (for example: `npm`, `pnpm`, `bun`, `yarn`, `npx`, `sv`, `prisma`, `git`, `docker`).
+- When setup or tooling changes are required, **always** respond with clear, copy-pastable commands for the developer to run locally instead.
+- Assume the developer is comfortable running commands themselves; focus on sequencing, flags, and explaining the effect of each command when helpful.
+- Do not assume a specific package manager; if relevant, provide variants (for example: `npm`, `pnpm`, `bun`) and let the developer choose.
+

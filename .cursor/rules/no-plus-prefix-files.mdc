@@ -1,0 +1,23 @@
+---
+description: Do not use reserved + prefix for non-route files (e.g. test files)
+globs: src/routes/**/*
+alwaysApply: false
+---
+
+# No + Prefix for Non-Route Files
+
+In SvelteKit, **files whose names start with `+` are reserved** for framework route/layout files (e.g. `+page.svelte`, `+page.server.ts`, `+layout.server.ts`). Only SvelteKit’s own conventions may use the `+` prefix.
+
+## Rule
+
+- **Do not** create or rename any file so that its name starts with `+` (e.g. `+page.server.test.ts`, `+layout.server.test.ts`).
+- Test files that target route modules must **not** use the `+` prefix. Place them next to the route and use a name without `+`.
+
+## Examples
+
+| Avoid (reserved)     | Use instead              |
+|----------------------|--------------------------|
+| `+page.server.test.ts`   | `page.server.test.ts`   |
+| `+layout.server.test.ts` | `layout.server.test.ts` |
+
+Imports from the actual route modules are unchanged (e.g. `import { load } from './+page.server'`), because the **source** file is still `+page.server.ts`; only the **test** file name must not start with `+`.
