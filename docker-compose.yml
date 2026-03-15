@@ -8,17 +8,17 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=web"
-      - "traefik.http.routers.personalsite.rule=${TRAEFIK_RULE:-Host(`${DOMAIN}`)}"
-      - "traefik.http.routers.personalsite.entrypoints=web"
-      - "traefik.http.routers.personalsite.service=personalsite"
-      - "traefik.http.routers.personalsite-secure.rule=${TRAEFIK_RULE:-Host(`${DOMAIN}`)}"
-      - "traefik.http.routers.personalsite-secure.entrypoints=websecure"
-      - "traefik.http.routers.personalsite-secure.tls=true"
-      - "traefik.http.routers.personalsite-secure.tls.certresolver=${TRAEFIK_CERTRESOLVER:-}"
-      - "traefik.http.routers.personalsite-secure.tls.domains[0].main=${TRAEFIK_TLS_MAIN:-}"
-      - "traefik.http.routers.personalsite-secure.tls.domains[0].sans=${TRAEFIK_TLS_SANS:-}"
-      - "traefik.http.routers.personalsite-secure.service=personalsite"
-      - "traefik.http.services.personalsite.loadbalancer.server.port=3000"
+      - "traefik.http.routers.underconstruction.rule=${TRAEFIK_RULE:-Host(`${DOMAIN}`)}"
+      - "traefik.http.routers.underconstruction.entrypoints=web"
+      - "traefik.http.routers.underconstruction.service=underconstruction"
+      - "traefik.http.routers.underconstruction-secure.rule=${TRAEFIK_RULE:-Host(`${DOMAIN}`)}"
+      - "traefik.http.routers.underconstruction-secure.entrypoints=websecure"
+      - "traefik.http.routers.underconstruction-secure.tls=true"
+      - "traefik.http.routers.underconstruction-secure.tls.certresolver=${TRAEFIK_CERTRESOLVER:-}"
+      - "traefik.http.routers.underconstruction-secure.tls.domains[0].main=${TRAEFIK_TLS_MAIN:-}"
+      - "traefik.http.routers.underconstruction-secure.tls.domains[0].sans=${TRAEFIK_TLS_SANS:-}"
+      - "traefik.http.routers.underconstruction-secure.service=underconstruction"
+      - "traefik.http.services.underconstruction.loadbalancer.server.port=3000"
 
 networks:
   web:
